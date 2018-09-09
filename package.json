@@ -1,0 +1,11 @@
+{
+  "name": "vue-auth-control",
+  "version": "1.0.0",
+  "description": "vue-auth-control",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xiaqijian xiaqijian009@gmail.com",
+  "license": "ISC"
+}
