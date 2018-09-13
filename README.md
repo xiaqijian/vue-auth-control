@@ -2,7 +2,7 @@
 
 ![npm version](https://img.shields.io/badge/npm-1.1.7-brightgreen.svg)
 
-vue项目, 路由控制方案，里面包含页面权限控制，单个按钮权限空
+vue项目, 路由控制方案，里面包含页面权限控制，单个按钮权限空
 
 
 ## Install
