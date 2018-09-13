@@ -1,3 +1,5 @@
+// "use strict";
+
 // tools.js
 
 /**
@@ -7,9 +9,11 @@
  */
 function hasPermission(roles, route) {
   if (route.meta && route.meta.role) {
-    return roles.some(role => route.meta.role.indexOf(role) >= 0)
+    return roles.some(function (role) {
+      return route.meta.role.indexOf(role) >= 0;
+    });
   } else {
-    return true
+    return true;
   }
 }
 
@@ -18,26 +22,33 @@ function hasPermission(roles, route) {
  * @param {Array} asyncRouterMap
  * @param {Array} roles 
  */
-export const filterAsyncRouter = (asyncRouterMap, roles) => {
-  const accessedRouters = asyncRouterMap.filter(route => {
+function filterAsyncRouter(asyncRouterMap, roles) {
+  var accessedRouters = asyncRouterMap.filter(function (route) {
     if (hasPermission(roles, route)) {
       if (route.children && route.children.length) {
-        route.children = filterAsyncRouter(route.children, roles)
+        route.children = filterAsyncRouter(route.children, roles);
       }
-      return true
+      return true;
     }
-    return false
-  })
-  return accessedRouters
-}
+    return false;
+  });
+  console.log('包')
+  console.log(accessedRouters)
+  return accessedRouters;
+};
 
 /**
  * @param {Array} target 目标数组
  * @param {Array} arr 需要查询的数组
  * @description 判断要查询的数组是否至少有一个元素包含在目标数组中
  */
-export const hasOneOf = (targetarr, arr) => {
-  return targetarr.some(_ => arr.indexOf(_) > -1)
-}
+function hasOneOf(targetarr, arr) {
+  return targetarr.some(function (_) {
+    return arr.indexOf(_) > -1;
+  });
+};
 
-
+module.exports = {
+  hasOneOf: hasOneOf,
+  filterAsyncRouter: filterAsyncRouter
+};
