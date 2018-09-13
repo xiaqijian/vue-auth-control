@@ -1,6 +1,6 @@
 {
   "name": "vue-auth-control",
-  "version": "1.1.4",
+  "version": "1.1.6",
   "description": "vue-auth-control",
   "main": "index.js",
   "scripts": {
