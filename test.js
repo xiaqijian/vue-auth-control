@@ -1,4 +1,5 @@
-var tools = require('./index.js')
+import {filterAsyncRouter } from 'vue-auth-control'
+
 
 const roles = ['admin'];
 const asyncRouterMap = [
@@ -32,6 +33,6 @@ const asyncRouterMap = [
 ];
 
 
-var testRouter = tools.filterAsyncRouter(asyncRouterMap, roles)
+var testRouter = filterAsyncRouter(asyncRouterMap, roles)
 
 console.log(testRouter)
