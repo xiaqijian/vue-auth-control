@@ -16,7 +16,7 @@ npm install vue-auth-control --save
 
 ```javascript
 
-import { filterAsyncRouter, hasOneOf } from 'vue-auth-control'
+const tools = require('vue-auth-control')
 
 const role = ['admin'];
 const asyncRouterMap = [
@@ -36,9 +36,9 @@ const asyncRouterMap = [
   { path: '*', redirect: '/404', hidden: true }
 ];
 
-const filterRouter = filterAsyncRouter(asyncRouterMap, role )
+const filterRouter = tools.filterAsyncRouter(asyncRouterMap, role )
 
-console hasOneOfVal = hasOneOf(['admin', 'super_editor', ['admin']]) // true
+const hasOneOfVal = tools.hasOneOf(['admin', 'super_editor', ['admin']]) // true
 ```
 ## API
 

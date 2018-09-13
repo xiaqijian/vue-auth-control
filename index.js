@@ -32,8 +32,8 @@ function filterAsyncRouter(asyncRouterMap, roles) {
     }
     return false;
   });
-  console.log('包')
-  console.log(accessedRouters)
+  // console.log('包')
+  // console.log(accessedRouters)
   return accessedRouters;
 };
 
